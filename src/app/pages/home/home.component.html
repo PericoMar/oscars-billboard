@@ -5,18 +5,8 @@
         <hr>
     </header>
     <section class="films">
-        <div class="film">
-            <img src="../../../assets/Oppenheimer.jpg" alt="">
-            <div class="film-details">
-                <h3>Oppenheimer</h3>
-                <p>Descripción de la pelicula Oppenheimer</p>
-            </div>
-        </div>
-        <div class="film"><img src="../../../assets/Oppenheimer.jpg" alt=""></div>
-        <div class="film"><img src="../../../assets/Oppenheimer.jpg" alt=""></div>
-        <div class="film"><img src="../../../assets/Oppenheimer.jpg" alt=""></div>
-        <div class="film"><img src="../../../assets/Oppenheimer.jpg" alt=""></div>
-        <div class="film"><img src="../../../assets/Oppenheimer.jpg" alt=""></div>
-        <div class="film"><img src="../../../assets/Oppenheimer.jpg" alt=""></div>
+        @for(film of films; track film.movieID){
+            <app-film [film]="film"></app-film>
+        }
     </section>
 </main>

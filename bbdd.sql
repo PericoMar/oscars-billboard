@@ -1,0 +1,30 @@
+-- Tabla Usuarios:
+-- userID (PK): Identificador único del usuario.
+-- nombre: Nombre del usuario.
+-- correo electrónico: Correo electrónico del usuario (podría utilizarse como login).
+-- contraseña: Contraseña del usuario.
+-- Tabla Películas:
+-- movieID (PK): Identificador único de la película.
+-- título: Título de la película.
+-- poster: Poster de la película.
+-- imagen: Imagen adicional.
+-- director: Director de la película.
+-- género: Género de la película.
+-- duración: Duración de la película.
+-- clasificación: Clasificación por edad.
+-- Tabla Salas:
+-- salaID (PK): Identificador único de la sala.
+-- nombre: Nombre o número de la sala.
+-- capacidad: Capacidad máxima de la sala.
+-- Tabla Horarios:
+-- horarioID (PK): Identificador único del horario.
+-- salaID (FK): Clave foránea que referencia la sala en la que se proyecta la película.
+-- movieID (FK): Clave foránea que referencia la película que se proyecta.
+-- hora_inicio: Hora de inicio de la proyección.
+-- hora_fin: Hora de finalización de la proyección.
+-- fecha: Fecha en la que se proyecta la película.
+-- Tabla Reservas:
+-- reservaID (PK): Identificador único de la reserva.
+-- userID (FK): Clave foránea que referencia al usuario que realiza la reserva.
+-- horarioID (FK): Clave foránea que referencia al horario en el que se realiza la reserva.
+-- cantidad_asientos: Cantidad de asientos reservados.
