@@ -1,7 +1,7 @@
-<div class="film">
-    <img src="../../../assets/Oppenheimer.jpg" alt="">
+<article class="film">
+    <img [src]="film.poster" alt="{{ film.titulo }}">
     <div class="film-details">
-        <h3>Oppenheimer</h3>
-        <p>Descripción de la pelicula Oppenheimer</p>
+        <h3>{{ film.titulo }}</h3>
+        <p>{{ film.descripcion }}</p>
     </div>
-</div>
+</article>

@@ -6,13 +6,13 @@ import { Film } from '../components/film/film';
 @Injectable({
   providedIn: 'root'
 })
-export class FilmServiceService {
+export class FilmService {
   private apiUrl = 'http://localhost:3000'; // URL del servidor Node.js
 
   constructor(private http: HttpClient) {}
 
   // Obtener todas las películas
   getAllFilms(): Observable<Film[]> {
-    return this.http.get<Film[]>(`${this.apiUrl}/films`);
+    return this.http.get<Film[]>(`${this.apiUrl}/peliculas`);
   }
 }
