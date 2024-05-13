@@ -1,4 +1,4 @@
-div.film{
+article.film{
     position: relative;
     transition-duration: .2s;
     transition-delay: .2s;
@@ -6,7 +6,7 @@ div.film{
 }
 
 
-div.film img{
+article.film img{
     width: 280px;
     border-radius: 8px;
     height: auto;
@@ -14,16 +14,16 @@ div.film img{
     transition: transform 0.2s ease, opacity 0.5s ease; /* Agregar una transición suave */
 }
 
-div.film:hover{
+article.film:hover{
     scale: 1.1;
     cursor:pointer;
 }
 
-div.film:hover img{
+article.film:hover img{
     opacity:0;
 }
 
-div.film div.film-details{
+article.film div.film-details{
     position:absolute;
     top: 0;
     left:0;
