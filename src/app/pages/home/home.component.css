@@ -18,6 +18,7 @@ header hr{
 
 section.films{
     justify-items: center;
+    align-items: center;
     margin: 100px auto;
     max-width: 990px;
     display: grid;
@@ -29,42 +30,7 @@ section.films{
     column-gap: 75px;
 }
 
-div.film{
-    position: relative;
-    transition-duration: .2s;
-    transition-delay: .2s;
-    transition-timing-function: ease;
+a.film-anchor{
+    text-decoration: none;
+    color: white;
 }
-
-
-div.film img{
-    width: 280px;
-    border-radius: 8px;
-    height: auto;
-    box-shadow: 0 0 5px black;
-    transition: transform 0.2s ease, opacity 0.5s ease; /* Agregar una transición suave */
-}
-
-div.film:hover{
-    scale: 1.1;
-    cursor:pointer;
-}
-
-div.film:hover img{
-    opacity:0;
-}
-
-div.film div.film-details{
-    position:absolute;
-    top: 0;
-    left:0;
-    z-index:-1;
-    border-radius: 8px;
-    box-sizing: border-box;
-    padding: 10px;
-    width:100%;
-    height: 100%;
-    background-color: rgb(25, 25, 130);
-    opacity: 0.8;
-}
-

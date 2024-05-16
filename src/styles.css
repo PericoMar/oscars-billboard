@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 *{
     margin: 0;
-    font-family: Raleway, Arial, Helvetica, sans-serif;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: medium;
     
 }
 
@@ -9,4 +11,21 @@ body{
     background-color: rgb(39, 39, 140);
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "Montserrat", sans-serif; }
+
+h1.montserrat-h1{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: xx-large;
+}
+
+h2.montserrat-h2{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: xx-large;
+    margin: 0;
+}

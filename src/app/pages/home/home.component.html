@@ -1,12 +1,14 @@
 <main>
     <header>
-        <h1>Todas las películas</h1>
+        <h1 class="montserrat-h1">TODAS LAS PELÍCULAS</h1>
         <hr>
         <hr>
     </header>
     <section class="films">
         @for(film of films; track film.movieID){
-            <app-film [film]="film"></app-film>
+            <a class="film-anchor" [routerLink]="['/film/', film.movieID]">
+                <app-film [film]="film"></app-film>
+            </a>
         }
     </section>
 </main>

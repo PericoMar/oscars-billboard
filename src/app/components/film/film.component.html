@@ -1,7 +1,10 @@
 <article class="film">
-    <img [src]="film.poster" alt="{{ film.titulo }}">
+    <img [src]="film.poster" alt="{{ film.titulo }}" class="poster">
     <div class="film-details">
+        <img [src]="film.imagen" alt="{{ film.titulo }}" class="film-img">
+        <div class="film-text">
         <h3>{{ film.titulo }}</h3>
         <p>{{ film.descripcion }}</p>
+        </div>
     </div>
 </article>
