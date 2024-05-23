@@ -3,22 +3,26 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FilmService } from '../../services/film.service';
 import { Film } from '../../components/film/film';
+import { FilmBookingsComponent } from '../../components/film-bookings/film-bookings.component';
+import { SesionService } from '../../services/sesion.service';
 
 
 @Component({
   selector: 'app-film-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FilmBookingsComponent],
   templateUrl: './film-page.component.html',
   styleUrl: './film-page.component.css'
 })
 export class FilmPageComponent implements OnInit{
   film!: Film;
   isLoading : boolean = true;
+  sesions! : Array<any>;
 
   constructor(
     private route: ActivatedRoute,
     private filmService: FilmService,
+    private sesionService: SesionService
   ) { }
 
   ngOnInit(): void {
@@ -32,5 +36,13 @@ export class FilmPageComponent implements OnInit{
       },
       error => console.error(error)
     );
+
+    this.sesionService.getSesions(id).subscribe(
+      sesions => {
+        this.sesions = sesions;
+        console.log(this.sesions);
+      },
+      error => console.error(error)
+    )
   }
 }

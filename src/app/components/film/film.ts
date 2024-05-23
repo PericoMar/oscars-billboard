@@ -4,6 +4,7 @@ export interface Film {
     poster: string;
     imagen: string;
     descripcion: string;
+    resumen: string;
     director: string;
     genero: string;
     duracion: number;

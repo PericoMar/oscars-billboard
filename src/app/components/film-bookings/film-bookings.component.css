@@ -1,0 +1,58 @@
+.film-booking {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .seating {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .row {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr); /* 8 seats + 1 column for stairs */
+    gap: 10px;
+  }
+  
+  .row:nth-child(4) {
+    grid-template-columns: repeat(7, 1fr); /* 6 seats + 1 column for stairs */
+  }
+  
+  .seat-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .seat-container img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  /* Define colors for different seat states */
+  .seat-container.available {
+    background-color: lightgreen;
+  }
+  
+  .seat-container.occupied {
+    background-color: red;
+    cursor: not-allowed;
+  }
+  
+  .seat-container.user-occupied {
+    background-color: orange;
+  }
+  
+  .seat-container.selected {
+    background-color: blue;
+  }
+  
+  .row::before {
+    content: '';
+    width: 10px; /* width of the stairs column */
+    background-color: transparent;
+  }
+  

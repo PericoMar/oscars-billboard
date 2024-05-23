@@ -22,6 +22,7 @@
 
 .film-page{
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     margin: 80px 20%;
@@ -35,11 +36,38 @@
   .film-details{
     padding:20px 40px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .film-poster{
     width: 300px;
     border-radius: 8px;
+  }
+
+  .more-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .age-clasification {
+    padding: 5px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+  
+  .age-clasification.plus-10 {
+    color: green;
+  }
+  
+  .age-clasification.plus-12 {
+    color: orange;
+  }
+  
+  .age-clasification.plus-18 {
+    color: red;
   }
 
   

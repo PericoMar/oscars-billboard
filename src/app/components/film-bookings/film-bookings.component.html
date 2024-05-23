@@ -1,0 +1,14 @@
+<section class="film-booking">
+    <h2>RESERVAR</h2>
+    <div class="seating">
+      <div *ngFor="let row of seats; let rowIndex = index" class="row">
+        <div *ngFor="let seat of row; let seatIndex = index"
+             class="seat-container"
+             [class]="getSeatClass(seat)"
+             (click)="toggleSeatSelection(seat)">
+          <img src="../../../assets/seat-removebg-preview.png" alt="Seat">
+        </div>
+      </div>
+    </div>
+  </section>
+  
