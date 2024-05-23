@@ -5,8 +5,8 @@
         <hr>
     </header>
     <section class="films">
-        @for(film of films; track film.movieID){
-            <a class="film-anchor" [routerLink]="['/film/', film.movieID]">
+        @for(film of films; track film.id_pelicula){
+            <a class="film-anchor" [routerLink]="['/film/', film.id_pelicula]">
                 <app-film [film]="film"></app-film>
             </a>
         }

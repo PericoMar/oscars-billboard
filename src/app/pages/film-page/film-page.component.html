@@ -1,1 +1,23 @@
-<p>film-page works!</p>
+<ng-container *ngIf="isLoading; else content">
+    <div class="spinner-container">
+      <div class="spinner"></div>
+    </div>
+    <h1>AAAAAAAAAAAAAAA</h1>
+  </ng-container>
+  
+  <ng-template #content>
+    <ng-container *ngIf="film">
+        <main class="film-page">
+            <section class="film-section">
+                <img [src]="film.poster" alt="{{film.titulo}}" class="film-poster">
+                <div class="film-details">
+                    <h1>{{ film.titulo }}</h1>
+                    <p>{{ film.descripcion }}</p>
+                </div>
+            </section>
+            <section class="film-booking"></section>
+        </main>
+      
+    </ng-container>
+  </ng-template>
+  

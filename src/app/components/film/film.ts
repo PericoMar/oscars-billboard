@@ -1,5 +1,5 @@
 export interface Film {
-    movieID : string;
+    id_pelicula : string;
     titulo: string;
     poster: string;
     imagen: string;
