@@ -1,6 +1,6 @@
 <header>
     
-    <div class="logo">
+    <div class="logo" routerLink="" routerLinkActive="active">
         <img src="../../assets/oscars.png" alt="Oscars">
         <h2 class="montserrat-h2">Oscars</h2>
     </div>
@@ -8,7 +8,7 @@
         <ul>
             <li><a routerLink="" routerLinkActive="active">Cartelera</a></li>
             <li><a routerLink="/winners-page" routerLinkActive="active">Ganadores</a></li>
-            <li><a>Inicia Sesión</a></li>
+            <li><a (click)="abrirModalLogin()">Inicia Sesión</a></li>
             <li><a>Registrate aquí</a></li>
         </ul>
     </nav>

@@ -32,8 +32,8 @@ article.film div.film-details {
     box-sizing: border-box;
     padding: 0px;
     width: 100%;
-    height: 100%;
-    background-color: rgb(25, 25, 130);
+    height: 99%;
+    background-color: rgb(10, 28, 58);
     opacity: 0.8;
     overflow: hidden; /* Asegúrate de que el contenido no se desborde del contenedor */
 }

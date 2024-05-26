@@ -8,7 +8,7 @@
 }
 
 body{
-    background-color: rgb(39, 39, 140);
+    background: radial-gradient(circle at center top, rgb(10, 28, 58) 0px, rgb(5, 17, 34) 900px, rgb(5, 17, 34));
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: "Montserrat", sans-serif; }
@@ -29,3 +29,5 @@ h2.montserrat-h2{
     font-size: xx-large;
     margin: 0;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

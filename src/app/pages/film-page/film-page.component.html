@@ -33,11 +33,15 @@
                 </div>
             </section>
             <section class="schedules">
+                <h2>SESIONES</h2>
+                <div class="sesions-buttons">
                 @for(sesion of sesions; track sesion){
-                    <button>{{ sesion.hora }}</button>
+                    <button class="sesion-button" (click)="changeSesion(sesion)">{{ sesion.hora }}</button>
                 }
+                </div>  
             </section>
-            <app-film-bookings [film]="film"></app-film-bookings>
+            <hr>
+            <app-film-bookings [film]="film" [sesionSelected]="sesionSelected"></app-film-bookings>
         </main>
       
     </ng-container>

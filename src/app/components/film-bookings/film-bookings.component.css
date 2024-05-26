@@ -1,22 +1,32 @@
 .film-booking {
-    text-align: center;
+    margin-top : 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
   }
   
-  .seating {
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    gap: 10px;
+  h2.booking-title{
+    color:white;
+    font-size: xx-large;
   }
-  
-  .row {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr); /* 8 seats + 1 column for stairs */
-    gap: 10px;
+
+  .seating{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 300px;
   }
-  
-  .row:nth-child(4) {
-    grid-template-columns: repeat(7, 1fr); /* 6 seats + 1 column for stairs */
+
+  .row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
   }
   
   .seat-container {
@@ -25,6 +35,8 @@
     align-items: center;
     cursor: pointer;
     border-radius: 4px;
+    width: 64px;
+    height: 64px;
   }
   
   .seat-container img {
@@ -50,9 +62,56 @@
     background-color: blue;
   }
   
-  .row::before {
-    content: '';
-    width: 10px; /* width of the stairs column */
-    background-color: transparent;
+  .seat-container.not-available{
+    visibility: hidden; /* Hace que el elemento no sea visible pero aún ocupa espacio */
+  background: none; /* Asegura que no haya fondo visible */
+  border: none; /* Asegura que no haya bordes visibles */
   }
+
+  .booking-info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px 0px;
+    width: 100%;
+  }
+  
+  .booking-info p{
+    margin:0;
+    color: white;
+    font-size: larger;
+  }
+
+  .booking-info span {
+    margin: 0 3px;
+    background-color: white; /* Fondo blanco para el número de asientos */
+    color: black;
+    font-size: larger;
+    padding: 5px; /* Añade un poco de espacio alrededor del número */
+    border-radius: 5px; /* Añade bordes redondeados al número */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una ligera sombra */
+  }
+
+  .booking-info button{
+    padding: 10px;
+    background-color: rgb(17, 114, 28);
+    color: white;
+    border: none;
+    border-radius: 4px; /* Borde redondeado */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones */
+  }
+
+  .bookig-info button:hover{
+    background-color: white;
+    color: rgb(28, 17, 114);
+    border-color: rgb(28, 17, 114); /* Borde en hover */
+  }
+
+  .booking-info button:disabled {
+    background-color: rgb(78, 152, 87); /* Cambia el color de fondo cuando está deshabilitado */
+    color: #bebebe; /* Cambia el color del texto cuando está deshabilitado */
+    cursor: not-allowed; /* Cambia el cursor cuando está deshabilitado */
+  }
+
   

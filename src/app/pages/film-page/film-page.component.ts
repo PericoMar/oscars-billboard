@@ -18,6 +18,7 @@ export class FilmPageComponent implements OnInit{
   film!: Film;
   isLoading : boolean = true;
   sesions! : Array<any>;
+  sesionSelected! : any;
 
   constructor(
     private route: ActivatedRoute,
@@ -40,9 +41,14 @@ export class FilmPageComponent implements OnInit{
     this.sesionService.getSesions(id).subscribe(
       sesions => {
         this.sesions = sesions;
+        this.sesionSelected = sesions[0];
         console.log(this.sesions);
       },
       error => console.error(error)
     )
+  }
+
+  changeSesion(sesion : any){
+    this.sesionSelected = sesion;
   }
 }

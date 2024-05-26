@@ -20,6 +20,20 @@
     to { transform: rotate(360deg); }
   }
 
+h1{
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+h2{
+  color :white;
+}
+
+hr{
+  color:white;
+  width: 100%;
+}
+
 .film-page{
     display: flex;
     flex-direction: column;
@@ -53,21 +67,56 @@
   }
 
   .age-clasification {
-    padding: 5px;
+    padding: 10px 10px;
     border-radius: 3px;
     font-weight: bold;
+    color: white;
+    border-radius: 25px;
   }
   
   .age-clasification.plus-10 {
-    color: green;
+    background-color: green;
   }
   
   .age-clasification.plus-12 {
-    color: orange;
+    background-color: orange;
   }
   
   .age-clasification.plus-18 {
-    color: red;
+    background-color: red;
   }
+
+  .schedules{
+    margin: 40px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+  }
+
+  .sesions-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+  }
+
+  .sesion-button {
+    padding: 8px;
+    background-color: rgb(28, 17, 114);
+    color: white;
+    border: none;
+    border-radius: 4px; /* Borde redondeado */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones */
+  }
+  
+  .sesion-button:hover {
+    background-color: white;
+    color: rgb(28, 17, 114);
+    border-color: rgb(28, 17, 114); /* Borde en hover */
+  }
+  
 
   

@@ -2,7 +2,7 @@ header{
     display:flex;
     justify-content: space-between;
     height: 110px;
-    background-color: rgb(25, 25, 130);
+    background-color: rgb(10, 28, 58);
     color:white;
     margin: 0;
     padding:20px 100px;
@@ -33,6 +33,7 @@ ul{
 }
 
 a {
+    cursor: pointer;
     color: inherit;
     text-decoration: none;
 }
