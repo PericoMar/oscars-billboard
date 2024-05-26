@@ -23,7 +23,7 @@ article.film:hover img.poster{
     opacity:0;
 }
 
-article.film div.film-details {
+article.film div.film-content {
     position: absolute;
     top: 0;
     left: 0;
@@ -39,12 +39,29 @@ article.film div.film-details {
 }
 
 /* Establece el tamaño de la imagen al 100% para que se ajuste al contenedor */
-article.film div.film-details .film-img {
+article.film div.film-content .film-img {
     width: 100%;
     height: 40%;
     object-fit: cover; /* Ajusta la imagen para que cubra todo el contenedor manteniendo su relación de aspecto */
 }
 
-article.film div.film-details .film-text{
+article.film div.film-content .film-details{
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+    color:white;
+}
+
+.description{
+    max-height: 100px;
+    overflow: hidden;
+}
+
+.logo{
+    width: 30px;
+    align-self: flex-end;
+    color:white;
+    filter:invert(100%);
 }

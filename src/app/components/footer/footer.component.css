@@ -1,0 +1,21 @@
+.footer {
+    background-color: rgb(10, 28, 58);
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon svg{
+    color: white;
+    width: 50px;
+    margin: 0 10px;
+}
+
+.social-icon svg:hover {
+    scale: 1.1;
+}

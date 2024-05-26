@@ -1,10 +1,13 @@
 <article class="film">
     <img [src]="film.poster" alt="{{ film.titulo }}" class="poster">
-    <div class="film-details">
+    <div class="film-content">
         <img [src]="film.imagen" alt="{{ film.titulo }}" class="film-img">
+        <div class="film-details">
         <div class="film-text">
             <h3>{{ film.titulo }}</h3>
-            <p>{{ film.descripcion }}</p>
+            <p class="description">{{ film.descripcion }}</p>
+        </div>
+        <img src="../../assets/oscars.png" alt="Oscars" class="logo">
         </div>
     </div>
 </article>
