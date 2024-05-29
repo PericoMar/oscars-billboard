@@ -18,9 +18,15 @@ header{
     cursor: pointer;
 }
 
-img{
+img.logo-img{
     width:auto;
     height: 70px;
+    filter:invert(100%);
+}
+
+img.nav-opt-img{
+    width:auto;
+    height: 18px;
     filter:invert(100%);
 }
 

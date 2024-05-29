@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   films: Film[] = [];
+  isLoading: boolean = true;
 
   constructor(private filmService: FilmService) {}
 
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
   getFilms(): void {
     this.filmService.getAllFilms().subscribe(films => {
       this.films = films;
+      this.isLoading = false;
       console.log(films);
     });
   }

@@ -1,0 +1,88 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .winners {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 76vh;
+  }
+  
+  .podium {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1800px;
+  }
+  
+  .position {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    position: relative;
+  }
+  
+  .position img {
+    max-width: 100%;
+  }
+  
+  .first {
+    height: 60%;
+    order: 1;
+    background-color: gold;
+  }
+  
+  .second {
+    height: 50%;
+    order: 2;
+    background-color: silver;
+  }
+  
+  .third {
+    height: 40%;
+    order: 3;
+    background-color: brown;
+  }
+  
+  .medal {
+    position: absolute;
+    top: -50px;
+  }
+  
+  .statuette {
+    margin-top: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .position {
+      width: 90%;
+    }
+  
+    .podium {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .first, .second, .third {
+      width: 100%;
+      order: unset;
+    }
+  
+    .first {
+      height: 60%;
+    }
+  
+    .second {
+      height: 50%;
+    }
+  
+    .third {
+      height: 40%;
+    }
+  }
+  

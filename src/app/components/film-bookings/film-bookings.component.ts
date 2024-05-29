@@ -3,6 +3,9 @@ import { Film } from '../film/film';
 import { CommonModule, formatDate } from '@angular/common';
 import { BookingService } from '../../services/booking.service';
 import { User } from '../../user';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginModalComponent } from '../login-modal/login-modal.component';
+import { UserService } from '../../services/user.service';
 
 export interface Seat{
   row: number,
@@ -24,16 +27,17 @@ export class FilmBookingsComponent implements OnChanges{
   @Input() film! : Film;
   seats: Seat[][] = [];
   @Input() sesionSelected! : any;
-  user : User = {
-    correo : "admin@admin.com",
-    nombre_usuario : "admin"
-  } 
+  user! : any;
   reservations : Array<any> = [];
   selectedSeats: Seat[] = [];
 
-  constructor (private bookingService : BookingService){}
+  constructor (private bookingService : BookingService,
+    private _matDialog: MatDialog,
+    private userService: UserService
+  ){}
 
   ngOnInit(): void {
+    this.user= this.userService.getUser();
     this.initializeSeats();
     setTimeout(()=>{
       this.loadBookings();
@@ -107,7 +111,7 @@ export class FilmBookingsComponent implements OnChanges{
   updateSeats(): void {
     console.log(this.reservations);
     this.reservations.forEach(reservation => {
-      if (reservation.id_usuario === this.user.correo) {
+      if (this.user && reservation.id_usuario === this.user.correo) {
         this.seats[reservation.fila][reservation.columna].userOccupied = true;
       } else {
         this.seats[reservation.fila][reservation.columna].occupied = true;
@@ -148,34 +152,44 @@ export class FilmBookingsComponent implements OnChanges{
   }
 
   reserveSeats(): void {
-    const now = new Date();
-    const dia = now.toISOString().split('T')[0]; // Obtener la fecha en formato 'YYYY-MM-DD'
-    const hora = now.toTimeString().split(' ')[0]; // Obtener la hora en formato 'HH:MM:SS'
+    if(!this.user){
+      this.openLoginModal();
+    } else {
+      const now = new Date();
+      const dia = now.toISOString().split('T')[0]; // Obtener la fecha en formato 'YYYY-MM-DD'
+      const hora = now.toTimeString().split(' ')[0]; // Obtener la hora en formato 'HH:MM:SS'
 
-    const reservedSeats = this.selectedSeats.map(seat => ({
-      id_sesion: this.sesionSelected.id_sesion,
-      fila: seat.row,
-      columna: seat.column,
-      correo: this.user.correo,
-      dia : dia,
-      hora: hora
-    }));
+      const reservedSeats = this.selectedSeats.map(seat => ({
+        id_sesion: this.sesionSelected.id_sesion,
+        fila: seat.row,
+        columna: seat.column,
+        correo: this.user.correo,
+        dia : dia,
+        hora: hora
+      }));
 
-    console.log(reservedSeats);
+      console.log(reservedSeats);
 
-    this.bookingService.reserveSeats(reservedSeats).subscribe(
-      response => {
-        this.initializeSeats();
-        this.loadBookings();
-      },
-      error => {
-        console.error(error);
-      }
-    );
+      this.bookingService.reserveSeats(reservedSeats).subscribe(
+        response => {
+          this.initializeSeats();
+          this.loadBookings();
+        },
+        error => {
+          console.error(error);
+        }
+      );
 
-    this.selectedSeats = [];
+      this.selectedSeats = [];
+    }
   }
 
+  openLoginModal(){
+    this._matDialog.open(LoginModalComponent, {
+      width: '660px',
+      height: '500px'
+    })
+  }
 
   onSesionChanged(){
     this.initializeSeats();

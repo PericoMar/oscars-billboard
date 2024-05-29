@@ -4,11 +4,21 @@
         <hr>
         <hr>
     </header>
-    <section class="films">
-        @for(film of films; track film.id_pelicula){
-            <a class="film-anchor" [routerLink]="['/film/', film.id_pelicula]">
-                <app-film [film]="film"></app-film>
-            </a>
+    
+        @if(isLoading){
+            <div class="center">
+            <div class="spinner-container">
+                <div class="spinner"></div>
+            </div>
+            </div>
+        }@else {
+            <section class="films">
+            @for(film of films; track film.id_pelicula){
+                <a class="film-anchor" [routerLink]="['/film/', film.id_pelicula]">
+                    <app-film [film]="film"></app-film>
+                </a>
+            }
+            </section>
         }
-    </section>
+    
 </main>
