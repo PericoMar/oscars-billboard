@@ -46,7 +46,8 @@
   
   /* Define colors for different seat states */
   .seat-container.available {
-    background-color: lightgreen;
+    
+    background-color: rgb(119, 119, 255);
   }
   
   .seat-container.occupied {
@@ -55,11 +56,11 @@
   }
   
   .seat-container.user-occupied {
-    background-color: orange;
+    background-color: lightgreen;
   }
   
   .seat-container.selected {
-    background-color: blue;
+    background-color: orange;
   }
   
   .seat-container.not-available{

@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { NgForm } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RegisterModalComponent } from '../register-modal/register-modal.component';
+import { AuthService } from '../../services/auth.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-login-modal',
@@ -15,8 +17,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class LoginModalComponent {
   loginForm!: FormGroup;
+  passwordFieldType: string = 'password';
+  errorMsg : string = "";
 
-  constructor(private dialogRef: MatDialogRef<LoginModalComponent>, private fb: FormBuilder) { }
+  constructor(
+    private dialogRef: MatDialogRef<LoginModalComponent>, 
+    private fb: FormBuilder,
+    private _matDialog: MatDialog,
+    private authService : AuthService,
+    private userService : UserService
+  ) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -31,9 +41,34 @@ export class LoginModalComponent {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-
-
-      this.dialogRef.close();
+      const { email, password } = this.loginForm.value;
+      this.authService.validateCredentials(email, password).subscribe(
+        user => {
+          console.log('Usuario logueado:', user);
+          this.userService.setUser(user);
+          this.reloadPage();
+          this.dialogRef.close();
+        },
+        error => {
+          console.log(error);
+          this.errorMsg = "Credenciales incorrectas";
+        }
+      );
     }
+  }
+
+  togglePasswordVisibility(): void {
+    this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
+  }
+
+  closeAndOpenRegisterModal(){
+    this.dialogRef.close();
+    this._matDialog.open(RegisterModalComponent, {
+      width: '600px',
+      height: '600px'
+    })
+  }
+  reloadPage(): void {
+    window.location.reload();
   }
 }

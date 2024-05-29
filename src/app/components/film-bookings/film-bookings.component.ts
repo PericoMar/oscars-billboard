@@ -35,7 +35,9 @@ export class FilmBookingsComponent implements OnChanges{
 
   ngOnInit(): void {
     this.initializeSeats();
-    this.loadBookings();
+    setTimeout(()=>{
+      this.loadBookings();
+    }, 100)
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -177,7 +179,10 @@ export class FilmBookingsComponent implements OnChanges{
 
   onSesionChanged(){
     this.initializeSeats();
-    this.loadBookings();
+    setTimeout(()=>{
+      this.loadBookings();
+    }, 100)
+    
   }
 
 }

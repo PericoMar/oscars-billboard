@@ -27,7 +27,7 @@ h2{
 
 .modal-header{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
 }
 
@@ -39,9 +39,85 @@ h2{
     align-items: center;
 }
 
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .form-control::placeholder {
+    font-family: 'Arial', sans-serif;
+    color: #888;
+    font-size: 16px;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  button[type="submit"] {
+    padding: 15px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: rgb(28, 17, 114);
+  }
+
+  .password-group {
+    position: relative;
+  }
+
+  .error-message {
+    color: rgb(255, 112, 112);
+    font-size: 1em;
+    margin-top: 5px;
+  }
+  
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 55%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
 .modal-footer{
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+}
+
+.modal-footer button{
+    margin-bottom: 8px;
+}
+
+.register-button{
+    text-decoration: underline;
+    color:rgb(159, 150, 217);
+    background: none;
+    border: none;
+    cursor: pointer;
 }

@@ -5,11 +5,20 @@
         <h2 class="montserrat-h2">Oscars</h2>
     </div>
     <nav>
-        <ul>
-            <li><a routerLink="" routerLinkActive="active">Cartelera</a></li>
-            <li><a routerLink="/winners-page" routerLinkActive="active">Ganadores</a></li>
-            <li><a (click)="abrirModalLogin()">Inicia Sesión</a></li>
-            <li><a>Registrate aquí</a></li>
-        </ul>
+        @if(user){
+            <ul>
+                <li><a routerLink="" routerLinkActive="active">Cartelera</a></li>
+                <li><a routerLink="/winners-page" routerLinkActive="active">Ganadores</a></li>
+                <li><a (click)="logout()">Cerrar sesion</a></li>
+                <li><a >Bienvenido</a></li>
+            </ul>
+        } @else {
+            <ul>
+                <li><a routerLink="" routerLinkActive="active">Cartelera</a></li>
+                <li><a routerLink="/winners-page" routerLinkActive="active">Ganadores</a></li>
+                <li><a (click)="abrirModalLogin()">Inicia Sesión</a></li>
+                <li><a (click)="abrirModalRegister()">Registrate aquí</a></li>
+            </ul>
+        }
     </nav>
 </header>
