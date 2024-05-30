@@ -151,6 +151,7 @@ export class FilmBookingsComponent implements OnChanges{
   }
 
   reserveSeats(): void {
+    this.userService.getUser();
     if(!this.user){
       this.openLoginModal();
     } else {

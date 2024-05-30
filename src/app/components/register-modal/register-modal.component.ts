@@ -68,7 +68,11 @@ export class RegisterModalComponent {
           const user = { email, password };
           this.authService.register(user).subscribe(response => {
             console.log('Usuario registrado:', response);
-            this.userService.setUser(user);
+            const nuevoUser = {
+              correo : email,
+            }
+            this.userService.setUser(nuevoUser);
+            console.log(this.userService.getUser());
             this.reloadPage();
             this.closeDialog();
           }, error => {
