@@ -31,3 +31,11 @@ h2.montserrat-h2{
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-tooltip {
+    background-color: #333;  /* Cambiar el color de fondo del tooltip */
+    color: #fff;             /* Cambiar el color del texto */
+    font-size: 14px;         /* Cambiar el tamaño de la fuente */
+    border-radius: 4px;      /* Cambiar el radio de borde */
+    padding: 8px 16px;       /* Cambiar el padding */
+  }

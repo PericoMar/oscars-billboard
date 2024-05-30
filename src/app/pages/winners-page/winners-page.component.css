@@ -12,16 +12,69 @@ body, html {
     height: 76vh;
   }
   
+  img{
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    transition-duration: .2s;
+    transition-delay: .1s;
+    transition-timing-function: ease;
+  }
+
+  img:hover{
+    scale: 1.1;
+    cursor:pointer;
+}
+
+::ng-deep .custom-tooltip {
+  transform: scale(1.2)!important; 
+  --mdc-plain-tooltip-container-color:rgb(164, 140, 2);
+}
+
+
+::ng-deep .mat-tooltip {
+  max-width: 200px; 
+  line-height: 1.5; 
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px; 
+  padding: 8px; 
+}
+
+img.oscar{
+  filter:invert(100%);
+  width: 60px;
+  margin-top: 8px;
+}
+
+.oscars{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+aside{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height:400px;
+}
+
   .podium {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
+    height: 100%;
     max-width: 1800px;
   }
   
   .position {
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
+    flex-direction: row;
     align-items: center;
     width: 30%;
     position: relative;
@@ -30,59 +83,37 @@ body, html {
   .position img {
     max-width: 100%;
   }
+
   
-  .first {
-    height: 60%;
-    order: 1;
-    background-color: gold;
-  }
+img.count{
+  width: 80px;
+}
+
+img.count:hover{
+  transform: scale(1);
+}
+
+span{
+  color:white;
+  font-size: xx-large;
+}
+
+.saber-mas {
+  padding: 8px;
+  background-color: rgb(28, 17, 114);
+  color: white;
+  border: white solid 1px;
+  border-radius: 4px; /* Borde redondeado */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Transiciones */
+  padding:10px 16px;
+}
+
+.saber-mas:hover {
+  background-color: white;
+  color: rgb(28, 17, 114);
+  border-color: rgb(28, 17, 114); /* Borde en hover */
+}
+
   
-  .second {
-    height: 50%;
-    order: 2;
-    background-color: silver;
-  }
-  
-  .third {
-    height: 40%;
-    order: 3;
-    background-color: brown;
-  }
-  
-  .medal {
-    position: absolute;
-    top: -50px;
-  }
-  
-  .statuette {
-    margin-top: auto;
-  }
-  
-  @media (max-width: 768px) {
-    .position {
-      width: 90%;
-    }
-  
-    .podium {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .first, .second, .third {
-      width: 100%;
-      order: unset;
-    }
-  
-    .first {
-      height: 60%;
-    }
-  
-    .second {
-      height: 50%;
-    }
-  
-    .third {
-      height: 40%;
-    }
-  }
-  
+ 

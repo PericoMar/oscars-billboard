@@ -1,34 +1,57 @@
 <section class="winners">
     <div class="podium">
-      <article class="position second">
-        <figure class="medal">
-          <img src="path/to/second_medal_image.jpg" alt="Second Medal">
-          <figcaption>Segundo Lugar</figcaption>
-        </figure>
-        <figure class="statuette">
-          <img src="path/to/second_statuette_image.jpg" alt="Second Statuette">
-          <figcaption>Segundo Lugar</figcaption>
-        </figure>
+      <article class="position">
+        <img src="../../../assets/OppenheimerPoster.jpg" alt="" routerLink="/film/2">
+        <aside>
+        <div class="count">
+          <img src="../../../assets/oscars.png" alt="Imagen de Oppenheimer" class="oscar count" >
+          <span>x {{oscars['Oppenheimer'].length}}</span>
+        </div>
+        <div class="oscars">
+          @for(oscar of oscars['Oppenheimer']; track oscar){
+            <img src="../../../assets/oscars.png" matTooltip="{{ oscar }}" [matTooltipClass]="'custom-tooltip'" alt="Imagen de Oppenheimer" class="oscar">
+          }
+        </div>
+        <button class="saber-mas"  routerLink="/film/1">
+          Saber más
+        </button>
+      </aside>
       </article>
-      <article class="position first">
-        <figure class="medal">
-          <img src="path/to/first_medal_image.jpg" alt="First Medal">
-          <figcaption>Primer Lugar</figcaption>
-        </figure>
-        <figure class="statuette">
-          <img src="path/to/first_statuette_image.jpg" alt="First Statuette">
-          <figcaption>Primer Lugar</figcaption>
-        </figure>
+      
+      <article class="position">
+        <img src="../../../assets/PobresCriaturasPoster.jpg" alt="" routerLink="/film/1">
+        <aside>
+        <div class="count">
+          <img src="../../../assets/oscars.png" alt="Imagen de Oppenheimer" class="oscar count">
+          <span>x {{oscars['Pobres criaturas'].length}}</span>
+        </div>
+        <div class="oscars">
+          @for(oscar of oscars['Pobres criaturas']; track oscar){
+            <img src="../../../assets/oscars.png" matTooltip="{{ oscar }}" [matTooltipClass]="'custom-tooltip'" alt="Imagen de Oppenheimer" class="oscar">
+          }
+        </div>
+        <button class="saber-mas" routerLink="/film/1">
+          Saber más
+        </button>
+        </aside>
       </article>
-      <article class="position third">
-        <figure class="medal">
-          <img src="path/to/third_medal_image.jpg" alt="Third Medal">
-          <figcaption>Tercer Lugar</figcaption>
-        </figure>
-        <figure class="statuette">
-          <img src="path/to/third_statuette_image.jpg" alt="Third Statuette">
-          <figcaption>Tercer Lugar</figcaption>
-        </figure>
+
+      <article class="position">
+        <img src="../../../assets/AnatomiaDeUnaCaidaPoster.jpg" alt="" routerLink="/film/6">
+        <aside>
+        <div class="count">
+          <img src="../../../assets/oscars.png" alt="Imagen de Oppenheimer" class="oscar count">
+          <span>x {{oscars['Anatomía de una caída'].length}}</span>
+        </div>
+        <div class="oscars">
+          @for(oscar of oscars['Anatomía de una caída']; track oscar){
+            <img src="../../../assets/oscars.png" matTooltip="{{ oscar }}" [matTooltipClass]="'custom-tooltip'" alt="Imagen de Oppenheimer" class="oscar">
+          }
+        </div>
+        <button class="saber-mas" routerLink="/film/6">
+          Saber más
+        </button>
+      </aside>
       </article>
     </div>
   </section>

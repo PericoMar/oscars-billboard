@@ -2,7 +2,6 @@ import { Component, Input, SimpleChanges, OnChanges } from '@angular/core';
 import { Film } from '../film/film';
 import { CommonModule, formatDate } from '@angular/common';
 import { BookingService } from '../../services/booking.service';
-import { User } from '../../user';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginModalComponent } from '../login-modal/login-modal.component';
 import { UserService } from '../../services/user.service';
