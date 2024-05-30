@@ -192,6 +192,7 @@ export class FilmBookingsComponent implements OnChanges{
   }
 
   onSesionChanged(){
+    this.selectedSeats = [];
     this.initializeSeats();
     setTimeout(()=>{
       this.loadBookings();
